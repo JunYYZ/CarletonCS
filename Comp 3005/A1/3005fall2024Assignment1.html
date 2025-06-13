@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>COMP3005</title>
+<style>
+body {
+	font-family: Arial, Helvetica, sans-serif;	
+	margin-left:80px;
+	margin-right:80px;
+}
+h1, h2, h3 {
+	font-weight: bold;
+	color: blue;
+}
+p {
+		font-size: large;
+}
+
+.red {
+	color: #F00;
+}
+  .bold {
+	font-weight: bold;
+}
+.requirement {
+	font-weight: bold;
+	background-color: #6AF37A;
+}
+.requirement_danger {
+	font-weight: bold;
+	background-color: #F47272
+}
+.requirement_warning {
+	font-weight: bold;
+	background-color: #F6CA54
+}
+  .code {
+	font-family: "Courier New", Courier, monospace;
+}
+  .requirement_warning1 {	font-weight: bold;
+	background-color: #F7BD36
+}
+</style>
+</head>
+<body class="arial">
+<h1>COMP 3005 Fall 2024 Assignment 01</h1>
+<br>
+<h1 class="red">Due: Wed Sept. 18 by 10:00pm submitted to <a href="https://brightspace.carleton.ca">brightspace</a></h1>
+<h2 class = "red">&nbsp;</h2>
+<h2 class = "red">Revisions:</h2>
+<p>Revisions and corrections will be noted here</p>
+<hr width="100%">
+<p><span class="badge-danger">Marking:</span> This assignment 
+  is based on <span class="badge-danger">19 </span>design requirements numbered <span class="badge-success"><span class="requirement">R1.1</span></span>...<span class="badge-success"><span class="requirement">R3.4</span></span> for a total of <span class="red">38</span> marks. </p>
+<p>Marks are awarded, or deducted, based on requirements as follows:</p>
+<table border="1">
+  <tr>
+    <th width="83">Req Type</th>
+    <th width="716">Assignment Grading</th>
+  </tr>
+  <tr>
+    <td><span class="requirement_danger">R0.x</span></td>
+    <td><p><span class="requirement_danger">Critical Submission and Intent Requirements.</span> Assignment (or problem in some cases) gets 0 if <span class="bold">any</span> critical submission requirement (shown in red) is not met.<br>
+    </p></td>
+  </tr>
+  <tr>
+    <td><span class="requirement_warning">R0.x</span></td>
+    <td><p><span class="requirement_warning">Good Practice Requirements.</span> You lose 2 marks for any good practice <br>
+      requirement (shown in amber) not met.<br>
+    </p></td>
+  </tr>
+  <tr>
+    <td><span class="requirement">Rx.x</span></td>
+    <td><p><span class="requirement">Design Requirements.</span> You earn 2 marks for each design requirement (green) satisfied, well implemented, and demonstrated as requested; 1 mark if it's partly met, met but not well implemented, or met but not demonstrated; and 0 if it's not attempted or met.</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<h2>Submission Summary:</h2>
+<table border="1" class="code">
+	<tr>
+	<th width="226">Question</th>
+	<th width="641">Devliverable to Submit</th>
+	</tr>
+	<tr>
+	<td>Problem 1</td>
+	<td>Submit insert_script.sql file that will run against the provided myTunes.db sqlite database using the .read sqlite3 console command</td>
+	</tr>
+	<tr>
+	<td>Problem 2</td>
+	<td>Submit elmasri_navathe_data.sql file that will be read with the .read command and that creates the database with data.</td>
+	</tr>
+	<tr>
+	<td>Problem 3</td>
+	<td>A single .pdf document with your project proposal (loose pdf files, or other formats WILL NOT be accepted. It must be a single organized pdf document)</td>
+	</tr>
+	</table>
+<p><span class="requirement_danger">Critical Submission Requirement R0.1</span><span class="red"> Your assignment submission must be a single .zip file. Other compression formats will not be accepted (and the assigment will get a grade of 0).The Brightspace submission links will have been set up to accept only a single file so you need to compress your contents into a single .zip file. </span></p>
+<hr>
+<p><br>
+</p>
+<h2>Building SQL Insert Scripts and Database Proposal</h2>
+<p>In this assignment you will get some practice writing simple SQL insert scripts with original data and write a proposal for the database project you want to build this term. </p>
+<p>You are asked to
+  contribute to a collective database using an SQL script. For this assignment you will need to download 
+  and install SQLite on your computer. Installation and basic tutorial instructions 
+  are posted on the course website and some are provided below also. 
+  You should browse the SQLite documentation at <a href="https://www.sqlite.org/index.html">sqlite.org</a> web site to see how it 
+  works. Become familiar with their SQL documentation section. Demos will also be done in the video lectures posted during week 2.</p>
+<p><span class="bold">Problem 1: </span>Build an  insert script for us to collectively build a small database about songs that appear on CD's. We want to be able to run all your scripts on the same database to build a large database for future assignments.</p>
+<p><span class="bold">Problem 2:</span> Build an  insert script for the data that the recommend text, and my powerpoints, uses to illustrate SQL operations. This dataset will  be used in our powerpoint slides that explain SQL operations. It will be useful for you to have a live table version of that data to play with.</p>
+<p><span class="bold">Problem 3:</span>&nbsp; In future assignments you will be modeling and implementing a database of your own choice using data that you are, hopefully, interested in. In this assignment you need to propose what your database will be about and provide us with the backstory of your proposed project. We have provided a sample document for the proposed fakebook indexing database project here to serve as an example. You are required to provide an adequate description and some sample documents that would explain to us what your database is going to be about, as we have done here for a proposed fakebook project.<br>
+</p>
+<hr width="100%">
+<h2>&nbsp;</h2>
+<h2>Installing SQLite</h2>
+<p>SQLite is a very popular free serverless relational database available from the following 
+site:&nbsp; <a href="https://www.sqlite.org/index.html">https://www.sqlite.org/index.html</a></p>
+<p>The download is found here:&nbsp;
+<a href="https://www.sqlite.org/download.html">
+https://www.sqlite.org/download.html</a>. Basic install instructions are also posted with our course notes.</p>
+<p>You should download and install sqlite and try some 
+basic examples from the sqlite documentation page:
+<a href="https://www.sqlite.org/cli.html">https://www.sqlite.org/cli.html</a> 
+.</p>
+<p>The <span class="code">sqlite3.exe</span> application provides a command line shell from which you can 
+create sql databases and run queries. You can also read sql commands from a file 
+using the <span class="code">.read</span> command (see the documentation) and we will use this to create 
+an initial database for part I of the assignment. You will be providing a 
+analogous script file for your project database.</p>
+<p>Here is a simple session example from the documentation page<br>
+&nbsp;</p>
+	<blockquote>
+		<pre>$ <b>sqlite3 ex1</b>
+SQLite version 3.6.11
+Enter &quot;.help&quot; for instructions
+Enter SQL statements terminated with a &quot;;&quot;
+sqlite&gt; <b>create table tbl1(one varchar(10), two smallint);</b>
+sqlite&gt; <b>insert into tbl1 values('hello!',10);</b>
+sqlite&gt; <b>insert into tbl1 values('goodbye', 20);</b>
+sqlite&gt; <b>select * from tbl1;</b>
+hello!|10
+goodbye|20
+sqlite&gt; .exit
+$</pre>
+	</blockquote>
+
+<p>&nbsp;</p>
+<p>In the above example a database called ex1 will either be 
+opened, or created if it does not already exist.<br>
+</p>
+<p>In sqlite3 .commands (i.e. commands that start with a dot) are not SQL 
+  statements but rather special instructions for the sqlite3 shell. Some useful 
+  ones are:</p>
+	
+<table border="1" class="code">
+	<tr>
+	<th width="226">Command</th>
+	<th width="641">Explanation</th>
+	</tr>
+	<tr>
+	<td>.help</td>
+	<td>List a summary of all the dot commands.</td>
+	</tr>
+	<tr>
+	<td><p>.exit<br>
+	  .quit
+	</p></td>
+	<td>Quit the application (also .quit)</td>
+	</tr>
+	<tr>
+	<td>.tables</td>
+	<td>List all the tables in the open database.</td>
+	</tr>
+	<tr>
+	<td>.schema table_name</td>
+	<td>Display definition of the table in SQL</td>
+	</tr>
+	<tr>
+	<td>.schema</td>
+	<td>Without a table name will display the schema for all your tables 
+in the database</td>
+	</tr>
+	<tr>
+	<td>.schema sqlite_master</td>
+	<td><p>An sqlite database has a hidden table called sqlite_master that shows information about the database's tables. It can be helpul to query this.</p>
+	  <pre>
+sqlite&gt; .schema sqlite_master
+CREATE TABLE sqlite_master (
+  type text,
+  name text,
+  tbl_name text,
+  rootpage integer,
+  sql text
+);
+sqlite&gt; 
+
+	  </pre>
+	</td>
+	</tr>
+  <tr>
+	<td>.read file_name</td>
+	<td>Read sql and cli commands from a file called file_name (e.g. 
+telephone_switch.sql) in the current directory</td>
+	</tr>
+	<tr>
+	<td>.mode column</td>
+	<td>Show output of SELECT statements as columns.<br>
+	  Other modes:
+		<ul>
+		<li>csv − Comma-separated values  column</li>
+		<li>column − Columns (left aligned)</li>
+		<li>html − HTML table markup</li>
+		<li>insert − SQL insert statements for TABLE</li>
+		<li>line − One value per line</li>
+		<li>list − Values delimited by .separator string</li>
+		<li>tabs − Tab-separated values</li>
+		<li>tcl − TCL list elements</li>
+		</ul>
+	</td>
+	</tr>
+    <tr>
+	<td>.header ON|OFF</td>
+	<td>Show column names header</td>
+	</tr>
+	<tr>
+	<td>.echo ON|OFF</td>
+	<td>Show the sql query being processed</td>
+	</tr>
+	<tr>
+	<td>.import FILE TABLE</td>
+	<td>Import data from FILE (csv format) into TABLE</td>
+	</tr>
+	<tr>
+	<td><p>.separator STRING</p>
+	  <p>.separator COL ?ROW?</p></td>
+	<td><p>Set column separator using in .output and .import to STRING</p>
+	  <p>Change the column separator and optionally the row<br>
+separator for both the output mode and .import</p></td>
+	</tr>
+	<tr>
+	<td>.show</td>
+	<td><p>Show values of various variables including the current separator string</p>
+	  <pre>
+	  sqlite&gt; .show
+        echo: off
+         eqp: off
+     explain: auto
+     headers: on
+        mode: column
+   nullvalue: ""
+      output: stdout
+colseparator: "|"
+rowseparator: "\n"
+       stats: off
+       width: 
+    filename: :memory:
+	  </pre>
+	</td>
+	</tr>
+  <tr>
+	<td>.output file_name</td>
+	<td>Redirect output to file file_name</td>
+	</tr>
+	<tr>
+	<td>.output stdout</td>
+	<td>Redirect output back to stdout (console)</td>
+	</tr>
+	<tr>
+	<td>.dump table_name</td>
+	<td>Output the contents of table table_name, or entire database, as an sql script</td>
+	</tr>
+	<tr>
+	<td>.width 10 20 5</td>
+	<td>Set the output column width for column mode. In this example the column widths of the three columns of output would be 10,20 and 5 characters.</td>
+	</tr>
+</table>
+	
+<p>&nbsp;</p>
+<p>Here is how you could run a <span class="courier"><span class="code">telephone_switch_rev4.sql</span></span> script if 
+  located in the same directory as your <span class="courier">database</span>.  (You can find that script in the course notes in the &quot;Sample SQLite Databases&quot; section of the notes.) Note it 
+  could take a few minutes to build the database. Once it's done you should use 
+  <span class="courier">.tables</span> to see if the tables are there and then try the <span class="courier">select *</span> from one of the 
+  tables as shown below.<br>
+&nbsp;</p>
+<blockquote>
+<pre>c:\sqlite&gt;sqlite3 example1
+SQLite version 3.7.2
+Enter &quot;.help&quot; for instructions
+Enter SQL statements terminated with a &quot;;&quot;
+sqlite&gt; .read telephone_switch.sql
+sqlite&gt; .tables
+calls services trunk_routes
+facilities subscribers trunks
+lines treatments
+service_subscribers trunk_channels
+sqlite&gt;
+sqlite&gt; .mode column
+sqlite&gt; .header on
+sqlite&gt; select * from subscribers;
+portid name address
+---------- ----------- ------------
+1 Mats Sundin 45 Elgin St.
+2 Jason Allis 46 Elgin St.
+3 Eric Lindro 48 Elgin St.
+4 Bryan MacCa 23 MacLeod S
+5 Steve Nash 1129 Otterso
+6 Michael Jor 1223 Carling
+7 Roger Cleme 14 Hopewell
+...
+</pre>
+</blockquote>
+<hr>
+<h2>&nbsp;</h2>
+<h2>Problem 1: Collectively 
+  Building a  myTunes Song Database</h2>
+<p>We want you to help us build a small database that provides information about music CDs and the songs that appear on them. You will each research and provide two CD's worth of data. If you don't own any CD's you can easily look up the details for CD releases on the web. We would like to merge all your SQL scripts to create on large database to use, for example, in future assignments or quizzes.</p>
+<p>We've provided with this assignment an SQLite database called <span class="code">myTunes.db</span> that contains two tables created by reading the following SQL script file.</p>
+<p>&nbsp;</p>
+<pre>
+BEGIN TRANSACTION;
+CREATE TABLE cds(
+      cd_id text primary key not null, --cd unique id
+      title text NOT NULL, --title of CD
+      artist text NOT NULL, --artist whose CD it is or "various artists"
+      producer text default NULL,
+      year integer,
+      contributor text --student number who contributed the data
+      );
+CREATE TABLE songs(
+      song_id integer primary key not null, --auto incrementing key
+      title text NOT NULL, --title of song
+      composer text NOT NULL, --person or persons who wrote the song
+      cd_id text NOT NULL, --cd this song appears on
+      track integer NOT NULL, --track number of the song on CD
+      contributor text --student number who contributed the data
+      );
+COMMIT;
+</pre>
+<p>We want you to write an SQL script called <span class="code">insert_script.sql</span> that will contribute data for two CDs and the songs that appear on them. To see some examples of SQL scripts see the course notes section <span class="bold">02B Sample SQLite Databases</span>. The TA's will run each of your scripts (with <span class="code">.read insert_script.sql)</span> from within the sqlite3 command line interface and build up the larger database that way. You must ensure that your script is<span class="bold"> idempotent</span> which means the effect of running it multiple times is the same as running it only once.</p>
+<p>Here are the specific itemized requirements for Problem 1.</p>
+<p><span class="requirement">R1.1</span> Your insert script must be called <span class="code">insert_script.sql</span> and insert into the database correct data for two CDs and the songs that appear on those CDs. Your script must work with the provided <span class="code">myTunes.db</span> database.</p>
+<p><span class="requirement">R1.2</span> Your script should assign a unique <span class="code">cd_id</span> to the CD's your are contributring. You need to make sure this key does not clash with keys used by other students. One suggestion is to include your student number as part of the key. For example 100123456CD1. Remember we will be reading all your scripts into a single database and the key you choose must remain unique.</p>
+<p>On the other hand, the <span class="code">song_id</span> key in the songs table should be auto-incrementing. That is, your script should not try and assign a value to the key instead the database would assign a value automatically. </p>
+<p><span class="requirement">R1.3</span> You need to do some research (e.g. google or  CD's booklets) and determine all the correct data for the CD and the songs required by the table.<br>
+</p>
+<p><span class="requirement">R1.4</span> The <span class="code">contributor</span> data in each table should be your student number. The TA's will use this as a basis to query and search for your contributions to the database when marking your assignment.</p>
+<p><span class="requirement">R1.5</span> Your song title and other text data should just use simple ASCII characters. Don't try to encode characters with accents or characters from other languages. Use the closest ascii spelling as this will help with queries. Also song titles that start with &quot;The&quot; should have the &quot;The&quot; at the end of the title. For example use &quot;Girl From Ipanema, The&quot; and NOT &quot;The Girl From Ipanema&quot;. Use normal title case and don't put your data in all caps or all lower case.</p>
+<p><span class="requirement">R1.6</span> Your CD and song titles should properly preserve punctuation in the title, especially quotation marks, comma's and brackets. If your song title contains double or single quotes you are going to have to experiment with how go get the data entered correctly with SQL. Basically if you need your title to contain a singlequote you should put two single quotes in a row as an escape sequence. You can put double quotes inside the single quotes. For example you should correctly handle songs with titles like Walk Don't Run or  a title like &quot;Wee-Dot&quot;.<br>
+<br>
+</p>
+<p><span class="requirement">R1.7</span> Your script must not destroy or corrupt data in the database contributed by other student's scripts. </p>
+<p><span class="requirement">R1.8</span> Your script must be <span class="bold">idempotent</span>. That is, if we read it more than once it should NOT contribute duplicate copies of the data. You could either try and use an <span class="code">insert or replace</span> statement instead of just an <span class="code">insert</span> statement or your script could have a <span class="code">delete</span> statement that first deletes old data based on your <span class="code">contributor</span> student number. The TA's will run your script twice against the same database to check this.</p>
+<p><span class="requirement">R1.9</span> Your script must provide the data of which song appears on which CD by providing the correct <span class="code">cd_id</span> when inserting song data. The <span class="code">cd_id</span> in the <span class="code">songs</span> table is considered a <span class="bold">foreign key</span> that references (has values of) the primary key of the <span class="code">cds</span> table. Note you DO NOT have to specify it as a foreign key in SQL for this assignment.</p>
+<p><span class="requirement">R1.10</span> The song data you contribute must assign the order in which the songs appear on the CD by providing the <span class="code">track</span> number.</p>
+<p>&nbsp;</p>
+<p >Make sure to test your script so you know it works before submitting it -see important marking instructions below. For example, make sure your script does not destroy data already there, or throw SQL errors trying to insert your script. Read your script a second time to ensure that it is idempotent.</p>
+<p>&nbsp;</p>
+<p class="red"><strong>Marking Instructions:</strong></p>
+<p class = "red">IMPORTANT: 0 MARKS IF THE SCRIPT THROWS AN SQL ERROR WHEN READ INTO THE EXISTING DATABASE, DOES NOT ADD DATA, OR DESTROYS DATA OF ANOTHER CONTRIBUTOR.</p>
+<p class = "red">Assuming the script runs and adds data  assign two marks for each itemized requirement fully met; 1 mark for requirements only partly met; 0 marks for any requirement not met or implemented.</p>
+<hr>
+<h2>&nbsp;</h2>
+<h2>Problem 2: Elmasri and Navathe Sample Data</h2>
+<p>The recommended text for the course uses a small data set to illustrate many query concepts. I also use this data set in many of the powerpoint slides in the notes. Here we want you to build an SQL insert script so you can actually play with this data  as we are learning the various concepts. The data set is represented in the file <span class="code">Elmasri and Navathe data.pdf</span></p>
+<p>Here are the specific requirements <span class="red">(2 marks each):</span></p>
+<h3>&nbsp;</h3>
+<h3><span class="requirement">R2.1</span> Insert script [2 marks]</h3>
+<p> Your SQL script should create the tables necessary. Your <span class="code">CREATE TABLE</span> commands should be preceded by <span class="code">DROP TABLE</span> commands so that the database is destroyed and rebuilt each time the script is run. (This will provide an easy way to reset the data after doing some experiments that modify it.) Name your script <span class="code">elmasri_navathe_data.sql</span><br>
+</p>
+<h3><span class="requirement">R2.2</span> Complete Data [2 marks]</h3>
+<p> The generated data should have all the data presented in the pdf document and be represented by the same six tables. You can name the columns of your tables however you want. The schema presented in the pdf document is just a suggestion. </p>
+<h3><span class="requirement">R2.3</span> Column Types [2 marks]</h3>
+<p> Your data types should use INTEGER or REAL types for the simple numbers like department number etc. It should use TEXT types for the other fields including  date strings and social insurance numbers. <span class="red">Alternatively you can use the other, &quot;more standard&quot; SQL types like varchar, char, date etc. if you want. SQLite will accept the various SQL string types but treats them all as TEXT. Just make sure your script runs with sqlite3. </span><span class="red">You can use REAL for numbers that require decimals.</span><br>
+</p>
+<h3><span class="requirement">R2.4</span> Primary Keys [2 marks]</h3>
+<p> Your tables should have the primary key specified for all tables and be consistent with those shown in the pdf document (keys are underlined in the tables provided).</p>
+<h3><span class="requirement">R2.5</span> Other Constraints [2 marks]</h3>
+<p>Your CREATE TABLE commands should set constraints NOT NULLwhere approriate. That is, for fields that should not be allowed to be NULL. All columns that participate in the primary key must be constrained to be NOT NULL.</p>
+<p>&nbsp;</p>
+<p><span class="red">Marking: assuming the script runs and adds data,  assign two marks for each itemized requirement fully met; 1 mark for requirements only partly met; 0 marks for any requirement not met or implemented. </span></p>
+	<p>&nbsp;</p>
+<hr>
+<h2>&nbsp;</h2>
+<h2>Problem 3: Proposal For Building
+  your own SQL database  application</h2>
+<p>In all the subsequent assignments you will be building a database of your own choosing to use in the end-of-term project assignment. 3005 will be a lot more fun if you are also working with some data that interests you. In later assignments  you will model the database, provide the data, and SQL scripts to create the data, and  finally demonstrate some querries using your data. For this assignment you need to propose what your database is going to be about and provide us with some background. </p>
+<p>As a complexity guideline your proposed database should have at least  two MANY-TO-MANY data dependencies. For example, students take many courses and courses have many students enrolled. In a database that keeps track of students taking courses this would be a many-to-many dependency. As another example: a library lends a particular book to many borrowers and each borrower signs out many books. </p>
+<p>See the following proposal for a fakebook database project as an example of what your document might look like
+<a href="fakebookDatabaseProject/fakebookDatabaseProject.html">fakebookDatabaseProject/fakebookDatabaseProject.html</a></p>
+<p>The itemized requirements below specify what your document needs to contain.</p>
+<p><span class="requirement_danger">Critical Submission Requirement R0.2</span><span class="red"> Submit your proposal as a single .pdf document. Indivudual loose files will not be graded. 0 marks for Problem 3 if this requirement is not met.</span></p>
+<h3>&nbsp;</h3>
+<h3><span class="requirement">R3.1</span> Description of your proposed database [2 marks]</h3>
+<p>
+  Describe what your database is about, and what service it is intended to provide for its users. Provide whatever backstory is appropriate of us to understand the motivation behind your proposed project.<br>
+</p>
+<h3><span class="requirement">R3.2</span> Application Requirements [2 marks]</h3>
+<p>
+Itemize the requirements of the service that your database is supposed to provide to its users. See sample proposal provided.</p>
+<h3><span class="requirement">R3.3</span> Due Dilligence [2 marks]</h3>
+  <p>
+  Describe any potential legal or intellectual property issues that might arise from the use of the data, or provide the rationale for why there would not be any such issues. See example from fakebook database proposal. Any database that is publicly visible must address the issue of who owns the data and whether you have the right to make it public. Basically tell us if you believe the data could be made public or whether it would need to remain private and if so why.<br>
+</p>
+<h3><span class="requirement">R3.4</span> Sample Data or Documents [2 marks]</h3>
+<p>
+  Include some sample documents in your proposal that represents the kind of data, or sources of data, that your project is based on. Or provide documents that show the kind of report  that might be generated from the database. This is to give us an idea of what kind of data you are intending to use or show users.</p>
+<p><span class="red">Marking: assign two marks for each itemized requirement fully met; 1 mark for requirements only partly met; 0 marks for any requirement not met or implemented. </span></p>
+<p></p>
+
+</body>
+</html>
