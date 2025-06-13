@@ -1,0 +1,24 @@
+digraph ElevatorInstallation {
+	rankdir=TB size="12,10"
+	Technician [label="Elevator Installation Technician" fillcolor=lightblue shape=ellipse style=filled]
+	Inspector [label=Inspector fillcolor=lightblue shape=ellipse style=filled]
+	Engineer [label="Electrical Engineers" fillcolor=lightblue shape=ellipse style=filled]
+	Manager [label="Project Manager" fillcolor=lightblue shape=ellipse style=filled]
+	Owner [label="Building Owner" fillcolor=lightblue shape=ellipse style=filled]
+	Supplier [label=Supplier fillcolor=lightblue shape=ellipse style=filled]
+	InstallElevator [label="Install Elevator" fillcolor=lightgrey shape=ellipse style=filled]
+	InstallElectrical [label="Install Electrical Systems" fillcolor=lightgrey shape=ellipse style=filled]
+	TestCalibrate [label="Test and Calibrate Elevator" fillcolor=lightgrey shape=ellipse style=filled]
+	Technician -> InstallElevator
+	Supplier -> InstallElevator
+	Manager -> InstallElevator
+	Owner -> InstallElevator
+	Technician -> InstallElectrical
+	Engineer -> InstallElectrical
+	Manager -> InstallElectrical
+	Owner -> InstallElectrical
+	Technician -> TestCalibrate
+	Inspector -> TestCalibrate
+	Manager -> TestCalibrate
+	Owner -> TestCalibrate
+}
